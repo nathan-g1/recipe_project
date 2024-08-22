@@ -23,6 +23,12 @@ class RecipeListCreateView(generics.ListCreateAPIView):
     queryset = Recipe.objects.all()
     serializer_class = RecipeSerializer
 
+# fetch a single recipe
+class RecipeFetchView(generics.RetrieveAPIView):
+    queryset = Recipe.objects.all()
+    serializer_class = RecipeSerializer
+    lookup_field = 'pk'
+
 class RecipeUpdateView(generics.UpdateAPIView):
     queryset = Recipe.objects.all()
     serializer_class = RecipeSerializer
